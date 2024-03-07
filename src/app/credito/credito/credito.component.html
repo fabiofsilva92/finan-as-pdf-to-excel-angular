@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upload de Arquivo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: fit-content;
+  }
+
+  .form-group {
+    margin: 10px 0;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input[type="file"],
+  select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  iframe{
+    width: 500;
+    height: 500;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="form-group">
+    <label for="file-upload">Upload de arquivo:</label>
+    <input id="file-upload" type="file" (change)="onFileSelected($event)" />
+  </div>
+  <div class="form-group">
+    <label for="bank-select">Nome do Banco:</label>
+    <select id="bank-select" [(ngModel)]="bankValue">
+      <option value="NUBANK">NUBANK</option>
+      <option value="C6">C6</option>
+    </select>
+  </div>
+
+  <button (click)="onUpload()">Upload</button>
+</div>
+<div>
+  Google abaixo
+  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXxg3sTz-0DRKtITph1shXOucNUU2ey6cGrhp3wpV2-nNvijmZZZq3tsKYuI60FA/pubhtml?widget=true&amp;headers=false"></iframe>
+</div>
+<br>
+
+
+</body>
+</html>
